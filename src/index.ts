@@ -1,6 +1,6 @@
-import { sum } from "./module";
+import { numberOperate } from "./module";
 
-console.log(sum(1, 2));
+console.log(numberOperate(1, 2, (a) => a));
 
 import fs = require("fs");
 console.log(fs.readFileSync);
