@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "lib":["ES2020"],
+    "strictNullChecks": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true
+  },
+  "include": ["./src"]
+}
