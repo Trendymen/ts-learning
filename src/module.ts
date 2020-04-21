@@ -8,8 +8,15 @@ export const numberOperate = (a: number, b: number, cb: Sum): number => {
   return cb(a, b);
 };
 
-numberOperate(1, 2, function (a) {
-  return a;
-});
+export class FuckablePerson {
+  private _age = 0;
+  constructor(public name: string, public gender: "male" | "female" = "male") {}
+  set age(value) {
+    this._age = value;
+  }
+  get age(): number {
+    return this._age;
+  }
+}
 
-const arr: ReadonlyArray<number> = [3, 4, 6];
+new FuckablePerson("a").age;
