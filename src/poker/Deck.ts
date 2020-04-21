@@ -3,6 +3,7 @@ import { Color, Mark } from "./enums";
 
 export class Deck {
   readonly #cards: Card[] = [];
+
   constructor(cards?: Card[]) {
     if (cards) {
       this.#cards = cards;
@@ -65,6 +66,14 @@ export class Deck {
     return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
   }
 
+  private dispatchCards(num: number): Deck {
+    const cards: Card[] = [];
+    for (let i = 0; i < num; i++) {
+      cards.push(this.#cards.shift() as Card);
+    }
+    return new Deck(cards);
+  }
+
   printCards(): void {
     let str = "";
     this.#cards.forEach((card, index) => {
@@ -80,13 +89,5 @@ export class Deck {
       this.dispatchCards(17),
       new Deck(this.#cards),
     ];
-  }
-
-  private dispatchCards(num: number): Deck {
-    const cards: Card[] = [];
-    for (let i = 0; i < num; i++) {
-      cards.push(this.#cards.shift() as Card);
-    }
-    return new Deck(cards);
   }
 }
