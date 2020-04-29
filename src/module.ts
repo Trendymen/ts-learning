@@ -2,7 +2,9 @@ interface Sum {
   (a: number, b: number): number;
 }
 
-export const sum = (a: number, b: number): number => a + b;
+export function sum(a: number, b: number): number {
+  return a + b;
+}
 
 export const numberOperate = (a: number, b: number, cb: Sum): number => {
   return cb(a, b);
@@ -18,5 +20,11 @@ export class FuckablePerson {
     return this._age;
   }
 }
+
+export let a = "text";
+
+export const setA = (text: string): void => {
+  a = text;
+};
 
 new FuckablePerson("a").age;
