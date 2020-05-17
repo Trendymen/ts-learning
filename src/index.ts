@@ -1,6 +1,9 @@
-// import "./poker";
-// import "./Dictionary";
-import { a, setA } from "./module";
-import "./Publisher-Subscriber/Publisher";
-setA("cc");
-console.log(a);
+import "./store";
+interface A {
+  readonly a: string;
+}
+class ClassA implements A {
+  a = "1";
+}
+const a = new ClassA();
+a.a = "2";
